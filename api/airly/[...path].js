@@ -6,7 +6,7 @@ const INSTALLATION_ID = String(process.env.VITE_AIRLY_INSTALLATION_ID || "123514
 
 export default async function handler(req, res) {
   // Read the route straight from the URL (more robust than req.query.path).
-  const url = new URL(req.url, "http://localhost")
+  const url = new URL(req.url, "https://meteorologic.vercel.app")
   const route = url.pathname.replace(/^\/api\/airly\/?/, "").replace(/\/+$/, "")
   const id = url.searchParams.get("installationId")
 
