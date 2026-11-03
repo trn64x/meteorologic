@@ -2,7 +2,7 @@ export const INSTALLATION_ID = Number(import.meta.env.VITE_AIRLY_INSTALLATION_ID
 export const REFRESH_MS = 30 * 60 * 1000 // free plan has a small daily request limit
 
 async function getJson(path, signal) {
-  const res = await fetch(`/api/airly${path}`, { signal })
+  const res = await fetch(`airly${path}`, { signal })
   if (!res.ok) {
     if (res.status === 401 || res.status === 403)
       throw new Error("Airly rejected the API key. Check AIRLY_API_KEY in .env.local and restart Vite.")

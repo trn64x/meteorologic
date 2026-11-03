@@ -15,7 +15,7 @@ export default defineConfig(({ mode }) => {
     },
     server: {
       proxy: {
-        "/api/airly": {
+        "/airly": {
           target: "https://airapi.airly.eu",
           changeOrigin: true,
           rewrite: (p) => p.replace(/^\/airly/, ""),
